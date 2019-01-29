@@ -2,7 +2,7 @@ Designed an application to perform CRUD operations on Employee Details
 
 Front End: Angular 5
 Backend: Nodejs
-Database : MySQL
+Database : MySQL  (Schema has also been included'
 ORM: Sequelize
 
 The application home page displays 2 panels 'Employee Details' and 'Employee List'
