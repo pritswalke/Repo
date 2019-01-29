@@ -1,0 +1,17 @@
+Designed an application to perform CRUD operations on Employee Details
+
+Front End: Angular 5
+Backend: Nodejs
+Database : MySQL
+ORM: Sequelize
+
+The application home page displays 2 panels 'Employee Details' and 'Employee List'
+User can add or Update an employe in the 'Employee Details' panel.
+The 'Submit' button for submitting the employee will not be enabled unless all the required fileds have a value.
+'Reset' button will clear the 'Employee Details' panel.
+The available Employee list will be displayed in the 'Employee List' panel.
+User can either 'View','Edit' or 'Delete' the Employee.
+Clicking on the Employee Name in the 'Employee List' navigates the user to the Employee details page.
+User can Delete the Employee using he Delete button
+User can Edit the Employee by clicking on the respective 'Edit' button. The Employee details will then be loaded in the 'Employee Details' panel which when edited and submitted will then be saved into the database.
+
