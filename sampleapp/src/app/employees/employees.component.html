@@ -1,0 +1,77 @@
+
+<div class="container">
+  <!-- Horizonatal Form -->
+
+  <div class="row">
+      <div class="col-sm-5">
+          <div class="card">
+              <div class="card-header text-white bg-info">
+                  Employee Details
+              </div>
+              <div class="card-body">
+                  <form #employeeForm="ngForm" class="form-horizontal" (ngSubmit)="addEmployee(employeeForm);">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-9">
+                              <input hidden required type="text" [(ngModel)]="employee.id" class="form-control" id="Id" name="Id">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="nameField" style="float:left">Name</label>
+                          <div class="col-xs-9">
+                              <input required type="text" [(ngModel)]="employee.name" class="form-control" id="Name" name="Name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="departmentField" style="float:left">Department </label>
+                          <div class="col-xs-10">
+                              <input required type="text" [(ngModel)]="employee.dept" class="form-control" id="Department" name="Department">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="salaryField" style="float:left">Salary </label>
+                          <div class="col-xs-10">
+                              <input required type="number" [(ngModel)]="employee.salary" class="form-control" id="Salary" name="Salary">
+                          </div>
+                      </div>
+                      <div class="col">
+                          <button type="submit" [disabled]="!employeeForm.valid" class="hand-cursor btn text-white bg-dark col-sm-4">Submit</button>
+                          <label class="col-sm-1"> </label>
+                          <button type="reset" (click)="employee=''" class="btn btn-default hand-cursor col-sm-4">Reset Form</button>
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-5">
+          <div class="card">
+              <div class="card-header text-white bg-info">
+                  Employee List
+              </div>
+              <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="table-info">
+                          <th scope="col col-sm-1">#</th>
+                          <th scope="col col-lg-5">Name</th>
+                          <th scope="col col-lg-5">Edit</th>
+                          <th scope="col col-lg-5">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let emp of employees">
+                            <th scope="row" >{{emp.id}} </th>
+                            <td><a routerLink="/employee/{{emp.id}}">{{emp.name}}</a> </td>
+                            <td><button (click)="editEmployee(emp.id)"  class="btn btn-success hand-cursor">Edit<i class="fa fa-success"></i></button></td> 
+                            <td><button (click)="deleteEmployee(emp.id)" class="btn btn-danger hand-cursor">Delete<i class="fa fa-remove"></i></button> </td>
+                          </tr>
+                        </tbody>
+                </table>
+              </div>
+            </div>       
+      </div>
+  </div>
+</div>
+
